@@ -1,0 +1,222 @@
+@import url(/css/reset.css);
+@import url(/css/fonts.css);
+
+:root {
+    --primary-light-red: hsla(0, 100%, 67%, 0.090);
+    --primary-light-red-c: hsl(0, 100%, 67%);
+    --primary-orange-yellow: hsla(39, 100%, 56%, 0.090);
+    --primary-orange-yellow-c: hsla(39, 100%, 56%);
+    --primary-green-teal: hsla(166, 100%, 37%, 0.090);
+    --primary-green-teal-c: hsla(166, 100%, 37%);
+    --primary-cobalt-blue: hsla(234, 85%, 45%, 0.090);
+    --primary-cobalt-blue-c: hsla(234, 85%, 45%);
+    /* NEUTRAL COLORS */
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+
+    --fst-gradient: linear-gradient(180deg, hsl(252, 100%, 67%) 5%,
+            hsl(241, 81%, 54%) 95%);
+
+    --snd-gradient: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%,
+            hsla(256, 72%, 46%, 1) 75%);
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.125rem;
+    display: grid;
+}
+
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.card-results {
+    max-width: 46rem;
+    width: 100%;
+}
+
+.card-results__score {
+    background: var(--fst-gradient);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--pale-blue);
+    text-align: center;
+}
+
+.span-text {
+    opacity: 0.8;
+    font-weight: 700;
+    font-size: 0.938rem;
+}
+
+.card-results__paragraph {
+    margin-bottom: 1rem;
+}
+
+.card-results__circle-score {
+    background: var(--snd-gradient);
+    border-radius: 50%;
+    width: 8.75rem;
+    height: 8.75rem;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    & .scored {
+        font-size: 3.5rem;
+        font-weight: 800;
+    }
+}
+
+.card-results__text-info {
+    margin-top: .3rem;
+    font-size: 0.938rem;
+}
+
+.card-results__summary {
+    padding: 1.5rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    & h2 {
+        font-size: 1.2rem;
+        margin-bottom: 24px;
+        font-weight: 700;
+    }
+}
+
+
+
+.summary__item {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    font-weight: 700;
+
+    & .item-icon {
+        width: 24px;
+    }
+}
+
+.summary__score {
+    margin-left: auto;
+    color: var(--dark-gray-blue);
+}
+
+.summary__score::after {
+    opacity: .5;
+    content: ' / 100';
+}
+
+.summary__item:nth-child(1) {
+    background-color: var(--primary-light-red);
+    padding: 1rem;
+    color: var(--primary-light-red-c);
+}
+
+.summary__item:nth-child(2) {
+    background-color: var(--primary-orange-yellow);
+    padding: 1rem;
+    color: var(--primary-orange-yellow-c);
+}
+
+.summary__item:nth-child(3) {
+    background-color: var(--primary-green-teal);
+    padding: 1rem;
+    color: var(--primary-green-teal-c);
+}
+
+.summary__item:nth-child(4) {
+    background-color: var(--primary-cobalt-blue);
+    padding: 1rem;
+    color: var(--primary-cobalt-blue-c);
+}
+
+.btn {
+    border: none;
+    width: 100%;
+    color: var(--pale-blue);
+    background-color: var(--dark-gray-blue);
+    border-radius: 2rem;
+    padding-block: 1rem;
+}
+
+.btn:hover {
+    background: var(--fst-gradient);
+    cursor: pointer;
+}
+
+@media (width > 768px) {
+
+    .container {
+        display: grid;
+        place-content: center;
+    }
+
+    .card-results {
+        display: flex;
+        box-shadow: 20px 50px 25px var(--pale-blue);
+        border-radius: 1.5rem;  
+        min-height: 31.875rem;
+    }
+
+    .card-results__paragraph {
+        font-size: 1.5rem;
+    }
+
+    .card-results__score {
+        border-radius: 1.5rem;
+        width: 23rem;
+
+        & h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .card-results__circle-score {
+        width: 12.5rem;
+        height: 12.5rem;
+
+        & .scored {
+            font-size: 4.5rem;
+        }
+    }
+
+    .card-results__text-info {
+        font-size: 1.1rem;
+        width: 15.313rem;
+        font-weight: 500;
+        word-wrap: break-word;
+    }
+
+    .card-results__summary {
+        width: 23rem;
+    }
+
+    .summary-list {
+        min-width: 100%;
+        margin-inline: auto;
+    }
+
+    .summary__btn {
+        min-width: 18rem;
+        margin-top: 1.5rem;
+    }
+}
